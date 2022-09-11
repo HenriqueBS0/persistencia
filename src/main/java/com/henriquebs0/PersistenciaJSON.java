@@ -19,7 +19,7 @@ public class PersistenciaJSON extends Persistencia {
         ObjectMapper jsonMapper = new ObjectMapper();
 
         String conteudo = ler();
-
+ 
         ArrayList<Aluno> alunos = conteudo == null ? new ArrayList<Aluno>() : jsonMapper.readValue(conteudo, new TypeReference<ArrayList<Aluno>>() {});
         alunos.add(aluno);
         gravar(jsonMapper.writeValueAsString(alunos));
