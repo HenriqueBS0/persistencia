@@ -31,4 +31,8 @@ abstract public class Persistencia  {
     }
 
     abstract public void persistir(Aluno aluno) throws JsonMappingException, JsonProcessingException, IOException;
+
+    public static <T extends Persistencia> void persistir(T persistencia, Aluno aluno) throws JsonMappingException, JsonProcessingException, IOException {
+        persistencia.persistir(aluno);
+    }
 }
